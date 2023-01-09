@@ -1,0 +1,38 @@
+#members table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+}
+
+#members td,
+th {
+    border: 1px solid #999696 !important;
+    text-align: center;
+    padding: 8px;
+    height: 50px;
+}
+
+#members tr:nth-child(even) {
+    background-color: #4f5664;
+}
+
+#members th,
+thead {
+    color: #dddddd;
+    text-align: center;
+}
+
+#members tbody tr:hover {
+    cursor: pointer;
+    background-color: #dddddd;
+    color: rgb(10, 10, 14)
+}
+
+#members th, thead {
+    font-weight: 500;
+    text-align: center;
+    font-size: medium;
+    padding: 10px 10px;
+}

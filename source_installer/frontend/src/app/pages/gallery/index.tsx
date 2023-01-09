@@ -1,0 +1,136 @@
+import { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
+import { imageGallerySelector } from 'features/gallery/store/gallerySliceSelectors';
+import { useAppDispatch, useAppSelector } from 'app/store';
+import HoverableImage from './HoverableImage';
+import DoodlerImg from 'assets/images/large_logo.png';
+import { Input, Button } from '@chakra-ui/react';
+import { getURLsByEmail, getReports } from 'app/actions';
+import { useNavigate } from 'react-router-dom';
+import { setPrompt } from 'features/options/store/optionsSlice';
+import './index.scss';
+
+const Gallery = () => {
+  const auth = useSelector((state: any) => state.authReducer);
+  const { images, currentImageUuid } = useAppSelector(imageGallerySelector);
+
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  const [promptTxt, setPromptTxt] = useState('');
+  const [myImages, setMyImages] = useState<any[] | []>([]);
+  const [galleryImages, setGalleryImages] = useState<any[] | []>([]);
+
+  const handleChange = (e: any) => {
+    console.log(e.target.value);
+    setPromptTxt(e.target.value);
+  };
+
+  const Generate = () => {
+    if (auth.isLoggedIn) {
+      dispatch(setPrompt(promptTxt));
+      localStorage.setItem('fromGenerate', 'yes');
+      localStorage.setItem('promptTxt', promptTxt);
+      navigate('/');
+    } else {
+      navigate('/login');
+    }
+  };
+
+  // useEffect(() => {
+  //   console.log('images', images);
+  //   const temp: any[] = [];
+  //   images.map((image: any) => {
+  //     if (image.metadata.image) {
+  //       temp.push(image);
+  //     }
+  //   });
+  //   setGalleryImages(temp);
+  // }, [images]);
+
+  useEffect(() => {
+    const init = async () => {
+      const res = await getReports();
+      const requests = res.reports;
+      console.log('requests', requests);
+      const temp: any[] = [];
+      requests.reverse().map((request: any) => {
+        if (request.url) {
+          temp.push({
+            category: 'result',
+            width: request.width,
+            height: request.height,
+            url: request.url,
+            metadata: {
+              image: {
+                cfg_scale: request.cfg_scale,
+                width: request.width,
+                height: request.height,
+                seed: request.seed,
+                steps: request.steps,
+                sampler: request.sampler_name,
+                prompt: [
+                  {
+                    prompt: request.prompt,
+                  },
+                ],
+              },
+            },
+          });
+        }
+      });
+      setGalleryImages(temp);
+    };
+    init();
+  }, []);
+
+  // useEffect(() => {
+  //   const init = async () => {
+  //     const url_list = await getURLsByEmail(auth.user.email);
+  //     const temp: any[] = [];
+  //     images.map((image) => {
+  //       if (url_list.indexOf(image.url) > -1) {
+  //         temp.push(image);
+  //       }
+  //     });
+  //     setMyImages(temp);
+  //   };
+  //   init();
+  // }, [images]);
+
+  return (
+    <div className="home" style={{ overflow: 'auto' }}>
+      <div className="image-gallery-container">
+        {galleryImages.length ? (
+          <>
+            <div
+              className="image-gallery"
+              style={{
+                gridTemplateColumns: 'repeat(auto-fill, minmax(256px, auto))',
+                padding: '0px',
+              }}
+            >
+              {galleryImages.map((image: any) => {
+                const { uuid } = image;
+                const isSelected = currentImageUuid === uuid;
+                // console.log("image", image);
+                return (
+                  <HoverableImage
+                    key={uuid}
+                    image={image}
+                    isSelected={isSelected}
+                  />
+                );
+              })}
+            </div>
+          </>
+        ) : (
+          <div className="image-gallery-container-placeholder">
+            <p>No Images In Gallery</p>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default Gallery;

@@ -1,0 +1,70 @@
+.image-detail {
+  padding: 30px 35px 0px 35px;
+}
+
+span.field {
+  font-weight: 600;
+}
+
+span.content {
+  color: #f2f2f2;
+}
+
+p {
+  margin-top: 10px;
+}
+
+.custom-icon {
+  display: inline;
+  margin-right: 10px;
+  margin-left: 10px;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.custom-icon :hover {
+  cursor: pointer;
+}
+
+.likes {
+  margin-top: 9px;
+  margin-left: 10px;
+  position: absolute;
+}
+
+.likes-icon:hover {
+  cursor: pointer;
+}
+
+.close {
+  position: absolute;
+  right: 50px;
+  font-size: 35px;
+}
+
+.close-icon:hover {
+  color: red;
+  cursor: pointer;
+}
+
+.email:hover {
+  cursor: pointer;
+}
+
+.sudo {
+  text-align: center;
+}
+
+.sudo:before {
+  vertical-align: middle;
+  display: inline-block;
+  height: 100%;
+  content: '';
+  margin-right: -0.25em;
+}
+
+.sudo .child {
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+}

@@ -1,0 +1,182 @@
+@use '../styles/Mixins/'as *;
+
+svg {
+  fill: var(--svg-color);
+}
+
+.App {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--background-color);
+}
+
+.app-content {
+  display: grid;
+  row-gap: 1rem;
+  padding: $app-padding;
+  grid-auto-rows: min-content auto;
+  width: $app-width;
+  height: $app-height;
+}
+
+
+// Ad Block CSS
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.center {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adblock-wrapper {
+  background: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 99;
+}
+
+.adblock-content-wrapper {
+  box-shadow: 24px 24px 48px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  max-width: 400px;
+  background: #fff;
+  height: auto;
+  width: 100%;
+}
+
+.adblock-content {
+  padding: 30px 50px;
+}
+
+.adblock-content .center {
+  margin-bottom: 30px;
+}
+
+.adblock-close {
+  position: relative;
+  top: 0px;
+  float: right;
+  margin: -10px;
+  background: #fa3123;
+  color: #fff;
+  font-size: 20px;
+  padding: 2px 7px 2px;
+  border-radius: 50%;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.image-container {
+  width: 100px;
+  text-align: center;
+  margin-bottom: -20px;
+}
+
+.image-container .image h3 {
+  font-size: 30px;
+  font-weight: 700;
+  background: transparent;
+  border: 4px dotted rgba(250, 49, 35, 1);
+  border-radius: 50%;
+  text-align: center;
+  color: rgba(250, 49, 35, 1);
+  padding: 27px 0px;
+  font-family: inherit;
+}
+
+.image-container .image .fas {
+  float: right;
+  font-size: 20px;
+  margin: 0px 0px 0px -20px;
+  color: rgba(250, 49, 35, 1);
+  background: #fff;
+  border-radius: 50%;
+  padding: 5px 6px 5px 8px;
+}
+
+.adblock-text,
+.adblock-text h3 {
+  text-align: center;
+  font-family: inherit;
+  font-weight: 700;
+  color: black;
+}
+
+.adblock-text h3 {
+  font-size: 30px;
+}
+
+.adblock-text p {
+  margin: 20px auto;
+  font-weight: 500;
+}
+
+.adblock-button .btn {
+  line-height: 1em;
+  border-radius: 30px;
+  border: none;
+  padding: 15px 20px;
+  width: 100%;
+  background: #fa3123;
+  color: #fff;
+  transition: 0.2s;
+  border: 2px solid #fa3123;
+}
+
+.adblock-button .btn:hover {
+  background: #fff;
+  color: #fa3123;
+  border: 2px solid #fa3123;
+}
+
+/*Style for example text*/
+.example-page {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+}
+
+.example-page h2 {
+  font-size: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(255, 255, 255, 0.3);
+}

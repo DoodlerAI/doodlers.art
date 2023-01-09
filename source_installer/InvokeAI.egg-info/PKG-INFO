@@ -1,0 +1,32 @@
+Metadata-Version: 2.1
+Name: InvokeAI
+Version: 2.2.0
+Summary: An implementation of Stable Diffusion which provides various new features and options to aid the image generation process
+Home-page: https://github.com/invoke-ai/InvokeAI
+Author: The InvokeAI Project
+Author-email: lincoln.stein@gmail.com
+License: MIT
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: GPU
+Classifier: Environment :: GPU :: NVIDIA CUDA
+Classifier: Environment :: MacOS X
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3 :: Only,Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Topic :: Artistic Software
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Application
+Classifier: Topic :: Internet :: WWW/HTTP :: WSGI :: Server
+Classifier: Topic :: Multimedia :: Graphics
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
+Classifier: Topic :: Scientific/Engineering :: Image Processing
+Requires-Python: >=3.9, <4
+License-File: LICENSE
+License-File: LICENSE-ModelWeights.txt
+
+This version of Stable Diffusion features a slick WebGUI, an interactive command-line script that combines text2img and img2img functionality in a "dream bot" style interface, and multiple features and other enhancements.

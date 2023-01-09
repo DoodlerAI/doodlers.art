@@ -1,0 +1,98 @@
+.site-header {
+  display: grid;
+  grid-template-columns: auto max-content;
+}
+
+.site-header-left-side {
+  display: flex;
+  align-items: center;
+  column-gap: 0.7rem;
+  padding-left: 0.5rem;
+
+  img {
+    width: 128px;
+    height: 26px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .logo:hover {
+    cursor: pointer;
+  }
+}
+
+.site-header-right-side {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.site-header-left-side img {
+  margin-right: 40px;
+}
+
+.site-header-left-side a {
+  margin-left: 4px;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.site-header-left-side a:hover {
+  color: var(--chakra-colors-red-500);
+  text-decoration: none;
+}
+
+.site-header-left-side a:focus {
+  color: var(--chakra-colors-red-500);
+  text-decoration: none;
+}
+
+//
+/* ------Dropdown------ */
+.drop-nav {
+  position: relative;
+  margin-bottom: 0px;
+  padding: 0px 40px;
+}
+
+.drop-nav a {
+  text-transform: capitalize;
+  overflow: hidden;
+}
+
+.drop-nav .dropdown {
+  position: absolute;
+  background: #282c34;
+
+  display: none;
+  padding-left: 0px;
+
+  top: 33px;
+  left: 12px;
+  border-radius: 10px;
+  width: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.drop-nav:hover .dropdown {
+  display: block;
+  z-index: 999;
+}
+
+.drop-nav:hover .dropdown:hover {
+  color: var(--status-bad-color);
+}
+
+.drop-nav .dropdown a {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}

@@ -1,0 +1,39 @@
+.home {
+  
+}
+
+.likes-container {
+  width: 100%;
+  margin-top: -1px;
+  background-color: black;
+  color: white!important;
+  opacity: 0.8;
+  z-index: 9;
+  word-break: break-all;
+}
+
+.hoverable-image-detail {
+  // width: 100%;
+  padding: 0px!important;
+  width: 256px;
+  background-color: black;
+  color: white!important;
+  opacity: 0.8;
+  z-index: 9;
+  word-break: break-all;
+}
+
+.likes-container .prompt {
+  position: absolute;
+  min-height: 90px;
+  width: 256px;
+  bottom: 0px;
+  padding: 10px;
+  word-break: break-all;
+}
+
+.likes-container .likes {
+  position: absolute;
+  right: 20px;
+  top: 25px;
+} 
